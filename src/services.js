@@ -32,7 +32,7 @@ const ROOM_TYPE_INFO = {
     size: 32,
     tagline: 'A little more space',
     description:
-      'Extra room to unwind with a seating corner, rainfall shower and a higher floor overlooking the Makati skyline.',
+      'Extra room to unwind with a seating corner, rainfall shower and a higher floor overlooking the city skyline.',
     amenities: ['Queen bed + sofa bed', 'Air conditioning', 'Free Wi-Fi', 'Smart TV', 'Rainfall shower', 'Mini bar'],
     image: '/assets/room-deluxe.jpg',
   },
@@ -90,8 +90,8 @@ export async function getSettings() {
   const stored = Object.fromEntries(rows.map((r) => [r.key, r.value]));
   return {
     hotelName: stored.hotel_name || 'Sunrise Hotel',
-    address: stored.address || '88 Mabini Street, Makati City',
-    phone: stored.phone || '+63 2 8888 1700',
+    address: stored.address || '88 Santiago Boulevard, General Santos City',
+    phone: stored.phone || '+63 83 552 1700',
     email: stored.email || 'frontdesk@sunrisehotel.ph',
     currency: stored.currency || 'PHP',
     currencySymbol: stored.currency_symbol || '\u20B1',

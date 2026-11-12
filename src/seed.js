@@ -36,8 +36,8 @@ export async function seedIfEmpty() {
 async function seedSettings() {
   const settings = {
     hotel_name: 'Sunrise Hotel',
-    address: '88 Mabini Street, Makati City, Metro Manila',
-    phone: '+63 2 8888 1700',
+    address: '88 Santiago Boulevard, General Santos City, South Cotabato',
+    phone: '+63 83 552 1700',
     email: 'frontdesk@sunrisehotel.ph',
     currency: 'PHP',
     currency_symbol: '\u20B1',
@@ -121,7 +121,7 @@ async function seedRooms() {
 
 async function seedGuests() {
   const guests = [
-    ['Miguel Santos', '+63 917 234 5678', 'miguel.santos@example.com', '12 Ayala Avenue, Makati City', 'Passport', 'P8842190A'],
+    ['Miguel Santos', '+63 917 234 5678', 'miguel.santos@example.com', '12 Santiago Boulevard, General Santos City', 'Passport', 'P8842190A'],
     ['Sofia Reyes', '+63 918 345 6789', 'sofia.reyes@example.com', '45 Bonifacio High Street, Taguig', 'Driver\u2019s License', 'N02-18-004512'],
     ['Daniel Tan', '+63 919 456 7890', 'daniel.tan@example.com', '8 Scout Borromeo, Quezon City', 'Passport', 'P7731042B'],
     ['Isabelle Cruz', '+63 920 567 8901', 'isabelle.cruz@example.com', '22 Ortigas Center, Pasig', 'National ID', '1234-5678-9012'],
