@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: sunrise-hotel
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: TZ
+        value: Asia/Manila
+      - key: MYSQL_SSL
+        value: "true"
+      - key: MYSQL_URL
+        sync: false

@@ -1,0 +1,21 @@
+{
+  "name": "sunrise-hotel-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Sunrise Hotel Management System - reservations, front desk, rooms, housekeeping, billing and reports.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "reset": "node src/reset.js"
+  },
+  "author": "Jansel Antonio",
+  "license": "MIT",
+  "dependencies": {
+    "mysql2": "^3.24.6"
+  }
+}

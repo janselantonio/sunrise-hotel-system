@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunrise Hotel &middot; Boutique stays in Makati</title>
+  <meta name="description" content="Book a calm, sunlit room at Sunrise Hotel in Makati City. Check live availability and send a booking request in under a minute." />
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="stylesheet" href="/css/book.css" />
+</head>
+<body class="guest">
+  <header class="g-header" id="g-header">
+    <a class="g-brand" href="#top" aria-label="Sunrise Hotel home">
+      <img src="/assets/logo.svg" alt="" />
+      <span>
+        <strong>Sunrise Hotel</strong>
+        <small>Makati City</small>
+      </span>
+    </a>
+    <nav class="g-nav" aria-label="Guest site">
+      <a href="#rooms">Rooms</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#location">Location</a>
+    </nav>
+    <div class="g-header-actions">
+      <a class="g-phone" href="tel:+63288881700">+63 2 8888 1700</a>
+      <a class="g-staff" href="/">Staff sign in</a>
+    </div>
+  </header>
+
+  <section class="g-hero" id="top">
+    <div class="g-hero-media">
+      <img src="/assets/hero.jpg" alt="Sunrise Hotel exterior glowing in the early morning light" />
+    </div>
+    <div class="g-hero-copy">
+      <span class="g-eyebrow">Boutique stays &middot; 24 rooms &middot; Makati City</span>
+      <h1>Wake up somewhere<br /><em>worth remembering.</em></h1>
+      <p>
+        A calm, sunlit base for city days and slow weekends. Check live availability and
+        send a booking request &mdash; reception replies personally, usually within a few hours.
+      </p>
+      <div class="g-hero-proof">
+        <span><strong id="stat-rooms">24</strong> rooms</span>
+        <span><strong id="stat-types">4</strong> room types</span>
+        <span><strong id="stat-guests">200+</strong> guests welcomed</span>
+      </div>
+    </div>
+
+    <div class="g-booking-bar">
+      <form id="search-form" class="g-search" novalidate>
+        <label class="g-search-field">
+          <span>Check in</span>
+          <input type="date" name="checkIn" id="search-checkin" required />
+        </label>
+        <span class="g-search-divider" aria-hidden="true"></span>
+        <label class="g-search-field">
+          <span>Check out</span>
+          <input type="date" name="checkOut" id="search-checkout" required />
+        </label>
+        <span class="g-search-divider" aria-hidden="true"></span>
+        <label class="g-search-field">
+          <span>Guests</span>
+          <select name="guests" id="search-guests">
+            <option value="1">1 guest</option>
+            <option value="2" selected>2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+            <option value="6">6 guests</option>
+          </select>
+        </label>
+        <button class="g-search-btn" type="submit" id="search-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          Check availability
+        </button>
+      </form>
+      <p class="g-search-hint" id="search-hint">Best rate guaranteed when you book direct. No prepayment required.</p>
+    </div>
+  </section>
+
+  <main class="g-main">
+    <section class="g-intro" id="intro">
+      <div class="g-section-head">
+        <span class="g-kicker">Welcome to Sunrise</span>
+        <h2>A small hotel with a long, warm morning.</h2>
+        <p>
+          Twenty-four rooms above a quiet Makati street, a short walk from Ayala Avenue.
+          Thoughtful linens, strong coffee, and a front desk that knows your name.
+        </p>
+      </div>
+      <div class="g-intro-points">
+        <article>
+          <span class="g-point-icon">01</span>
+          <h3>Direct booking</h3>
+          <p>Request a room here and our reception team confirms it personally.</p>
+        </article>
+        <article>
+          <span class="g-point-icon">02</span>
+          <h3>Flexible arrival</h3>
+          <p>Check-in from 2:00 PM and check-out at 12:00 NN. Late arrivals welcome.</p>
+        </article>
+        <article>
+          <span class="g-point-icon">03</span>
+          <h3>Real people</h3>
+          <p>No call centres. Message or call the front desk and we will sort it out.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="g-rooms" id="rooms">
+      <div class="g-section-head g-section-head-row">
+        <div>
+          <span class="g-kicker">Rooms &amp; suites</span>
+          <h2>Pick the room that fits your trip.</h2>
+        </div>
+        <p class="g-section-note">Rates are per night, before 12% tax. Live availability updates as you search.</p>
+      </div>
+      <div class="g-room-grid" id="room-types" aria-live="polite">
+        <div class="g-room-skeleton"></div>
+        <div class="g-room-skeleton"></div>
+        <div class="g-room-skeleton"></div>
+        <div class="g-room-skeleton"></div>
+      </div>
+    </section>
+
+    <section class="g-availability" id="availability" hidden>
+      <div class="g-section-head g-section-head-row">
+        <div>
+          <span class="g-kicker">Live availability</span>
+          <h2 id="availability-title">Rooms for your dates</h2>
+        </div>
+        <button class="g-link-btn" type="button" id="availability-close">Clear search</button>
+      </div>
+      <p class="g-availability-summary" id="availability-summary"></p>
+      <div class="g-availability-grid" id="availability-results"></div>
+    </section>
+
+    <section class="g-book" id="book">
+      <div class="g-book-copy">
+        <span class="g-kicker">Request a room</span>
+        <h2>Tell us when you are coming.</h2>
+        <p>
+          This sends a booking request to the front desk. We will confirm your room by phone
+          or email. No card details are needed now.
+        </p>
+        <ul class="g-book-steps">
+          <li><span>1</span>Choose your dates and room</li>
+          <li><span>2</span>Send your request</li>
+          <li><span>3</span>Reception confirms your stay</li>
+        </ul>
+        <div class="g-book-contact">
+          <strong>Prefer to talk?</strong>
+          <a href="tel:+63288881700">+63 2 8888 1700</a>
+          <a href="mailto:frontdesk@sunrisehotel.ph">frontdesk@sunrisehotel.ph</a>
+        </div>
+      </div>
+
+      <div class="g-book-panel">
+        <form class="g-book-form" id="booking-form" novalidate>
+          <div class="g-form-grid">
+            <label class="g-field">
+              <span>Check in</span>
+              <input type="date" name="checkIn" id="book-checkin" required />
+            </label>
+            <label class="g-field">
+              <span>Check out</span>
+              <input type="date" name="checkOut" id="book-checkout" required />
+            </label>
+            <label class="g-field">
+              <span>Adults</span>
+              <select name="adults" id="book-adults">
+                <option value="1">1 adult</option>
+                <option value="2" selected>2 adults</option>
+                <option value="3">3 adults</option>
+                <option value="4">4 adults</option>
+                <option value="5">5 adults</option>
+                <option value="6">6 adults</option>
+              </select>
+            </label>
+            <label class="g-field">
+              <span>Children</span>
+              <select name="children" id="book-children">
+                <option value="0" selected>No children</option>
+                <option value="1">1 child</option>
+                <option value="2">2 children</option>
+                <option value="3">3 children</option>
+                <option value="4">4 children</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="g-field">
+            <span>Room</span>
+            <select name="roomId" id="book-room" required>
+              <option value="">Choose your dates first</option>
+            </select>
+          </label>
+
+          <div class="g-form-grid">
+            <label class="g-field">
+              <span>Full name</span>
+              <input type="text" name="fullName" id="book-name" placeholder="Juan Dela Cruz" autocomplete="name" required />
+            </label>
+            <label class="g-field">
+              <span>Mobile number</span>
+              <input type="tel" name="phone" id="book-phone" placeholder="+63 917 000 0000" autocomplete="tel" required />
+            </label>
+          </div>
+          <label class="g-field">
+            <span>Email <em>optional</em></span>
+            <input type="email" name="email" id="book-email" placeholder="you@example.com" autocomplete="email" />
+          </label>
+          <label class="g-field">
+            <span>Anything we should know? <em>optional</em></span>
+            <textarea name="notes" id="book-notes" rows="3" placeholder="Late arrival, anniversary, extra pillows..."></textarea>
+          </label>
+
+          <div class="g-book-summary" id="book-summary">
+            <div class="g-summary-row"><span>Room</span><strong id="summary-room">&mdash;</strong></div>
+            <div class="g-summary-row"><span>Stay</span><strong id="summary-stay">&mdash;</strong></div>
+            <div class="g-summary-row"><span>Room total</span><strong id="summary-subtotal">&mdash;</strong></div>
+            <div class="g-summary-row"><span>12% tax</span><strong id="summary-tax">&mdash;</strong></div>
+            <div class="g-summary-row g-summary-total"><span>Estimated total</span><strong id="summary-total">&mdash;</strong></div>
+            <p class="g-summary-note">Final folio is settled at the front desk on arrival or departure.</p>
+          </div>
+
+          <p class="g-form-error" id="booking-error" role="alert" hidden></p>
+          <button class="g-submit" type="submit" id="booking-submit">Send booking request</button>
+          <p class="g-form-legal">By sending a request you agree to be contacted about this stay. No payment is taken online.</p>
+        </form>
+
+        <div class="g-book-success" id="booking-success" hidden aria-live="polite">
+          <div class="g-success-mark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <span class="g-kicker">Request received</span>
+          <h3>Thank you, <span id="success-name">guest</span>.</h3>
+          <p>Your booking request is now with the front desk. We will contact you at <strong id="success-phone"></strong> to confirm.</p>
+          <div class="g-success-card">
+            <span>Your reference</span>
+            <strong id="success-reference">RSV-0000</strong>
+            <p id="success-details"></p>
+            <span class="g-success-status">Waiting for reception confirmation</span>
+          </div>
+          <button class="g-link-btn" type="button" id="success-again">Make another request</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="g-amenities" id="amenities">
+      <div class="g-section-head">
+        <span class="g-kicker">The small things</span>
+        <h2>Everything you need, nothing you don't.</h2>
+      </div>
+      <div class="g-amenity-grid">
+        <article>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><path d="M6 1v3M10 1v3M14 1v3"/></svg>
+          <h3>All-day coffee</h3>
+          <p>Freshly brewed local beans in the lobby from 6:00 AM.</p>
+        </article>
+        <article>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5a10 10 0 0 1 14 0"/><path d="M8.5 16a5.5 5.5 0 0 1 7 0"/><circle cx="12" cy="19.5" r=".8"/></svg>
+          <h3>Fast Wi-Fi</h3>
+          <p>Fibre internet throughout the rooms and common areas.</p>
+        </article>
+        <article>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>Safe &amp; simple</h3>
+          <p>24-hour front desk, keycard entry and CCTV in common areas.</p>
+        </article>
+        <article>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16"/><path d="M6 21V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v17"/><circle cx="15" cy="12" r="1"/></svg>
+          <h3>Room service</h3>
+          <p>Breakfast, snacks and late-night plates delivered to your door.</p>
+        </article>
+        <article>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+          <h3>Walkable Makati</h3>
+          <p>Ayala Avenue, Greenbelt and the CBD are minutes away.</p>
+        </article>
+        <article>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 3l-6.5 6.5"/><path d="M14 6.5l3.5 3.5L11 16l-4.5-4.5L14 6.5z"/><path d="M8 13l3 3-1.5 4a2 2 0 0 1-2.4 1.3l-3.1-.9a2 2 0 0 1-1.3-2.4L4 14l4-1z"/></svg>
+          <h3>Daily housekeeping</h3>
+          <p>Fresh linens and a tidy room every day of your stay.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="g-location" id="location">
+      <div class="g-location-card">
+        <span class="g-kicker">Find us</span>
+        <h2>88 Mabini Street, Makati City</h2>
+        <p>Five minutes on foot from Ayala Avenue, twenty minutes from the airport on a good day.</p>
+        <div class="g-location-details">
+          <div><span>Front desk</span><a href="tel:+63288881700">+63 2 8888 1700</a></div>
+          <div><span>Email</span><a href="mailto:frontdesk@sunrisehotel.ph">frontdesk@sunrisehotel.ph</a></div>
+          <div><span>Check-in</span><strong>2:00 PM</strong></div>
+          <div><span>Check-out</span><strong>12:00 NN</strong></div>
+        </div>
+        <a class="g-map-link" href="https://maps.google.com/?q=Mabini+Street+Makati+City" target="_blank" rel="noreferrer">
+          Open in Google Maps
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+      <div class="g-location-visual" aria-hidden="true">
+        <div class="g-map-block g-map-block-1"></div>
+        <div class="g-map-block g-map-block-2"></div>
+        <div class="g-map-block g-map-block-3"></div>
+        <div class="g-map-pin"></div>
+        <span class="g-map-label">Sunrise Hotel</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="g-footer">
+    <div class="g-footer-brand">
+      <img src="/assets/logo.svg" alt="" />
+      <div>
+        <strong>Sunrise Hotel</strong>
+        <p>A calm stay in the middle of Makati.</p>
+      </div>
+    </div>
+    <div class="g-footer-links">
+      <a href="#rooms">Rooms</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#location">Location</a>
+      <a href="/">Staff sign in</a>
+    </div>
+    <p class="g-footer-legal">&copy; <span id="g-year"></span> Sunrise Hotel &middot; Capstone prototype</p>
+  </footer>
+
+  <div class="g-toast" id="g-toast" role="status" aria-live="polite"></div>
+  <script type="module" src="/js/book.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunrise Hotel &middot; Management System</title>
+  <meta name="description" content="Sunrise Hotel Management System - reservations, front desk, rooms, housekeeping, billing and reports." />
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <section id="login-screen" class="login">
+    <div class="login-visual">
+      <div class="login-sky" aria-hidden="true">
+        <div class="sun"></div>
+        <div class="sun-ring ring-1"></div>
+        <div class="sun-ring ring-2"></div>
+        <div class="sun-ring ring-3"></div>
+        <div class="horizon"></div>
+        <div class="roofline"></div>
+      </div>
+      <header class="login-brand">
+        <img src="/assets/logo.svg" alt="" />
+        <div>
+          <strong>Sunrise Hotel</strong>
+          <span>Management System</span>
+        </div>
+      </header>
+      <div class="login-copy">
+        <span class="eyebrow light">Systems Analysis &amp; Design &middot; Capstone Proposal</span>
+        <h1>Run the front desk.<br /><em>Not the paperwork.</em></h1>
+        <p>Reservations, guest records, room status, housekeeping and billing &mdash; one calm workspace for the whole hotel team.</p>
+        <ul class="login-points">
+          <li><span></span>Live room and occupancy dashboard</li>
+          <li><span></span>Faster check-in, check-out and billing</li>
+          <li><span></span>Housekeeping and reports in one place</li>
+        </ul>
+      </div>
+      <footer class="login-footer">
+        <span>Jansel Antonio</span>
+        <span>BS Information Technology</span>
+      </footer>
+    </div>
+
+    <div class="login-panel">
+      <a class="login-guest-link" href="/book">
+        Preview the guest booking site
+        <svg class="icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
+      <form class="login-form" id="login-form" autocomplete="on">
+        <div class="login-form-head">
+          <span class="eyebrow">Staff sign in</span>
+          <h2>Welcome back</h2>
+          <p>Use your hotel account to continue.</p>
+        </div>
+        <label class="field">
+          <span>Username</span>
+          <input name="username" type="text" placeholder="e.g. reception" autocomplete="username" required />
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+        </label>
+        <p class="form-error" id="login-error" hidden></p>
+        <button class="btn btn-primary btn-block" type="submit" id="login-submit">Sign in</button>
+        <div class="demo-block">
+          <span class="demo-label">Demo accounts &mdash; click to fill</span>
+          <div class="demo-grid">
+            <button type="button" class="demo-chip" data-user="admin" data-pass="admin123"><strong>Administrator</strong><span>admin</span></button>
+            <button type="button" class="demo-chip" data-user="reception" data-pass="reception123"><strong>Receptionist</strong><span>reception</span></button>
+            <button type="button" class="demo-chip" data-user="manager" data-pass="manager123"><strong>Manager</strong><span>manager</span></button>
+            <button type="button" class="demo-chip" data-user="housekeeping" data-pass="housekeeping123"><strong>Housekeeping</strong><span>housekeeping</span></button>
+          </div>
+        </div>
+      </form>
+      <p class="login-legal">Capstone prototype &middot; Sunrise Hotel &middot; <span id="login-year"></span></p>
+    </div>
+  </section>
+
+  <div id="app" class="app" hidden>
+    <div class="sidebar-backdrop" id="sidebar-backdrop" hidden></div>
+    <aside class="sidebar" id="sidebar">
+      <a class="sidebar-brand" href="#/dashboard">
+        <img src="/assets/logo.svg" alt="" />
+        <div>
+          <strong>Sunrise</strong>
+          <span>Hotel management</span>
+        </div>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main navigation"></nav>
+      <div class="sidebar-foot">
+        <div class="user-card" id="user-card"></div>
+        <button class="sidebar-link js-logout" type="button" id="btn-logout">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>
+          Sign out
+        </button>
+        <a class="sidebar-link sidebar-guest-link" href="/book" target="_blank" rel="noreferrer">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          Guest booking site
+        </a>
+        <p class="sidebar-note">Capstone prototype &middot; v1.0</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-only" id="btn-menu" type="button" aria-label="Open menu">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="topbar-titles">
+          <h1 id="page-title">Dashboard</h1>
+          <p id="page-sub"></p>
+        </div>
+        <div class="topbar-right">
+          <div class="date-chip" id="date-chip"></div>
+          <button class="icon-btn js-logout" type="button" id="btn-signout" title="Sign out" aria-label="Sign out">
+            <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>
+          </button>
+        </div>
+      </header>
+      <div id="view" class="view"></div>
+    </main>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="false"></div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
